@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Shopping List</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> 
+  <link rel="stylesheet" href="main.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+  <script src="app.js"></script>
+
+</head>
+
+<body>
+  <h1>My Shopping List</h1>
+  <p id="instructions">Add items to your shopping list</p>  
+
+  <div id="inputForm"  ng-app="myShoppingList" ng-controller="myCtrl">
+
+    <input id="addItem"  ng-model="newItem" placeholder="Enter a new item">
+    <select ng-model="category">
+      <option value="" selected>Select a Category</option>
+      <option value="Bakery">Bakery</option>
+      <option value="Baking Goods">Baking Goods</option>
+      <option value="Beverages">Beverages</option>
+      <option value="Breakfast">Breakfast</option>
+      <option value="Canned & Packaged">Canned & Packaged</option>
+      <option value="Condiment & Toppings">Condiment & Toppings</option>
+      <option value="Dairy">Dairy</option>
+      <option value="Frozen">Frozen</option>
+      <option value="Meat & Seafood">Meat & Seafood</option>
+      <option value="Pasta">Pasta</option>
+      <option value="Produce">Produce</option>
+      <option value="Snacks">Snacks</option>
+    </select>
+    <button ng-click="addItem()">Add</button>
+    <br><br><br>
+    <table align=center>
+      <tr>
+        <th id="purchased">Purchased</th>
+        <th id="itemName">Name</th>
+        <th>Category</th>
+        <th>Remove</th>
+      </tr>
+      <tr ng-repeat="x in products | orderBy:'cat'">
+        <td><input type="checkbox"></td>
+        <td>{{x.name}}</td>
+        <td>{{x.cat}}</td>
+        <td id="remove"><span ng-click="removeItem($index)">&#10007;</span></td>
+      </tr>
+    </table>       
+
+  </div>
+
+</body>
+</html>

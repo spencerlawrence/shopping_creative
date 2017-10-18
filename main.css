@@ -1,0 +1,44 @@
+body {
+  background-color: #fff0b3;
+}
+
+h1 {
+  text-align: center;
+}
+
+p {
+  text-align: center;
+}
+
+#inputForm {
+  text-align: center;
+}
+
+table {
+    border-collapse: collapse;
+    width: 80%;
+}
+
+th, td {
+    padding: 7px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    font-size: 25px;
+}
+
+#itemName {
+  width: 40%;
+}
+
+#purchased {
+  width:100px;
+}
+
+#remove {
+  width:100px;
+  color: red;
+  font-size: 25px;
+  vertical-align: middle; 
+}
+
+tr:hover{background-color:#fffae6;}
